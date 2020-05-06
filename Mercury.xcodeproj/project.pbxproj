@@ -23,6 +23,12 @@
 		772A65ED24631BB80081CD93 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65EC24631BB80081CD93 /* Group.swift */; };
 		772A65EF24631C170081CD93 /* Grouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65EE24631C170081CD93 /* Grouping.swift */; };
 		772A65F1246321110081CD93 /* Informing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65F0246321110081CD93 /* Informing.swift */; };
+		772A65FD246327C60081CD93 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65FB246326C70081CD93 /* LoginController.swift */; };
+		772A65FE246327C90081CD93 /* RegController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65FC246326C70081CD93 /* RegController.swift */; };
+		772A6605246328100081CD93 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A6603246328100081CD93 /* CustomTextField.swift */; };
+		772A6606246328100081CD93 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A6604246328100081CD93 /* InputContainerView.swift */; };
+		772A66092463283F0081CD93 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A66072463283F0081CD93 /* LoginViewModel.swift */; };
+		772A660A2463283F0081CD93 /* RegViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A66082463283F0081CD93 /* RegViewModel.swift */; };
 		7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A852245F3D0600A5E33F /* AppDelegate.swift */; };
 		7793A855245F3D0600A5E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A854245F3D0600A5E33F /* SceneDelegate.swift */; };
 		7793A857245F3D0600A5E33F /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A856245F3D0600A5E33F /* NewsController.swift */; };
@@ -53,6 +59,12 @@
 		772A65EC24631BB80081CD93 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		772A65EE24631C170081CD93 /* Grouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grouping.swift; sourceTree = "<group>"; };
 		772A65F0246321110081CD93 /* Informing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Informing.swift; sourceTree = "<group>"; };
+		772A65FB246326C70081CD93 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		772A65FC246326C70081CD93 /* RegController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegController.swift; sourceTree = "<group>"; };
+		772A6603246328100081CD93 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		772A6604246328100081CD93 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		772A66072463283F0081CD93 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		772A66082463283F0081CD93 /* RegViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegViewModel.swift; sourceTree = "<group>"; };
 		7793A84F245F3D0600A5E33F /* Mercury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7793A852245F3D0600A5E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7793A854245F3D0600A5E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +116,8 @@
 		772A65CB2462BBE90081CD93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				772A6603246328100081CD93 /* CustomTextField.swift */,
+				772A6604246328100081CD93 /* InputContainerView.swift */,
 				772A65E6246314A00081CD93 /* ConversationCell.swift */,
 				772A65D22462CCB00081CD93 /* NewCell.swift */,
 				772A65DA2462DF170081CD93 /* LessonCell.swift */,
@@ -114,6 +128,8 @@
 		772A65CC2462BBF00081CD93 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				772A66072463283F0081CD93 /* LoginViewModel.swift */,
+				772A66082463283F0081CD93 /* RegViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -121,6 +137,7 @@
 		772A65CD2462BBF60081CD93 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				772A65FA246326C10081CD93 /* Auth */,
 				7793A856245F3D0600A5E33F /* NewsController.swift */,
 				7793A858245F3D0600A5E33F /* JournalController.swift */,
 				772A65E22462FE2C0081CD93 /* LessonDetailsController.swift */,
@@ -146,6 +163,15 @@
 				772A65D02462BC310081CD93 /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		772A65FA246326C10081CD93 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				772A65FB246326C70081CD93 /* LoginController.swift */,
+				772A65FC246326C70081CD93 /* RegController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		7793A846245F3D0600A5E33F = {
@@ -308,17 +334,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772A6605246328100081CD93 /* CustomTextField.swift in Sources */,
 				772A65EF24631C170081CD93 /* Grouping.swift in Sources */,
 				772A65D72462DB740081CD93 /* Lesson.swift in Sources */,
 				7793A859245F3D0600A5E33F /* JournalController.swift in Sources */,
+				772A6606246328100081CD93 /* InputContainerView.swift in Sources */,
 				772A65E32462FE2C0081CD93 /* LessonDetailsController.swift in Sources */,
 				772A65D12462BC310081CD93 /* Extensions.swift in Sources */,
 				772A65D32462CCB00081CD93 /* NewCell.swift in Sources */,
+				772A66092463283F0081CD93 /* LoginViewModel.swift in Sources */,
 				7793A857245F3D0600A5E33F /* NewsController.swift in Sources */,
 				772A65F1246321110081CD93 /* Informing.swift in Sources */,
 				772A65ED24631BB80081CD93 /* Group.swift in Sources */,
 				772A65E5246313870081CD93 /* DataRepository.swift in Sources */,
+				772A660A2463283F0081CD93 /* RegViewModel.swift in Sources */,
 				772A65E9246316980081CD93 /* User.swift in Sources */,
+				772A65FD246327C60081CD93 /* LoginController.swift in Sources */,
 				772A65E12462F9B40081CD93 /* LessonService.swift in Sources */,
 				772A65DB2462DF170081CD93 /* LessonCell.swift in Sources */,
 				772A65DF2462E6230081CD93 /* NewsService.swift in Sources */,
@@ -328,6 +359,7 @@
 				7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */,
 				772A65EB246319F50081CD93 /* MemberData.swift in Sources */,
 				772A65D52462CD260081CD93 /* New.swift in Sources */,
+				772A65FE246327C90081CD93 /* RegController.swift in Sources */,
 				7793A855245F3D0600A5E33F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
