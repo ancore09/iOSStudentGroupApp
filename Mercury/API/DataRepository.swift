@@ -17,16 +17,14 @@ class DataRepository {
     var groups: [Group]?
     
     func authUser(login: String, hash: String, completion: @escaping(User) -> Void) {
+        // fetching user
         let url = "http://194.67.92.182:3000/auth?login=\(login)&passwordhash=\(hash)"
         let urlRequest = URLRequest(url: URL(string: url)!)
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
             let responseU = try! JSONDecoder().decode(User.self, from: data!)
             
-            
-            
-            
-            
+            // fetching user's memberdata
             let url = "http://194.67.92.182:3000/getMemberData?id=\(responseU.memberdata_ID)"
             let urlRequest = URLRequest(url: URL(string: url)!)
             let session = URLSession(configuration: .default)
@@ -34,8 +32,7 @@ class DataRepository {
                 let responseMD = try! JSONDecoder().decode(MemberData.self, from: data!)
                 responseU.memberData = responseMD
                 
-                
-                
+                //fetching gropings
                 let url = "http://194.67.92.182:3000/getGrouping?userid=\(responseU.ID)"
                 let urlRequest = URLRequest(url: URL(string: url)!)
                 let session = URLSession(configuration: .default)
@@ -46,11 +43,11 @@ class DataRepository {
                         ids.append(grouping.Group_ID)
                     }
                     
-                    var url = "http://194.67.92.182:3000/getLessons?"
+                    // fetching groups
+                    var url = "http://194.67.92.182:3000/getGroup?"
                     ids.forEach { (id) in
                         url += "id=\(id)&"
                     }
-                    
                     let urlRequest = URLRequest(url: URL(string: url)!)
                     let session = URLSession(configuration: .default)
                     let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
@@ -70,4 +67,6 @@ class DataRepository {
         dataTask.resume()
 
     }
+    
+    
 }

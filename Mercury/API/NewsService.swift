@@ -11,12 +11,13 @@ import Foundation
 struct NewsService {
     static let shared = NewsService()
     
-    func fetchNews(forGroupId: Int, completion: @escaping([New]) -> Void) {
-        let url = "http://194.67.92.182:3000/getNews?groupid=\(forGroupId)"
+    func fetchNews(forGroupIds: [Int], completion: @escaping([New]) -> Void) {
+        var url = "http://194.67.92.182:3000/getNews?"
+        forGroupIds.forEach { (id) in
+            url += "groupid=\(id)&"
+        }
         let urlRequest = URLRequest(url: URL(string: url)!)
-        
         let session = URLSession(configuration: .default)
-        
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
             let responseObject = try! JSONDecoder().decode([New].self, from: data!)
             

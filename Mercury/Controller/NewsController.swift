@@ -27,9 +27,13 @@ class NewsController: UIViewController {
         configureBaseUI(withNavBarTitle: "News", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
         configureCollectionView()
         
-        //fetchNews(forGroupId: 1)
         DataRepository.shared.authUser(login: "rollingworld", hash: "356a192b7913b04c54574d18c28d46e6395428ab") { (user) in
             print(user.memberData?.nick)
+            var ids = [Int]()
+            DataRepository.shared.groups?.forEach({ (group) in
+                ids.append(group.ID)
+            })
+            self.fetchNews(forGroupIds: ids)
         }
     }
 
@@ -47,9 +51,9 @@ class NewsController: UIViewController {
     
     //MERK: API
     
-    func fetchNews(forGroupId: Int) {
+    func fetchNews(forGroupIds: [Int]) {
         showLoader(true)
-        NewsService.shared.fetchNews(forGroupId: forGroupId) { (news) in
+        NewsService.shared.fetchNews(forGroupIds: forGroupIds) { (news) in
             self.showLoader(false)
             self.news = news
             self.collectionView.reloadData()
