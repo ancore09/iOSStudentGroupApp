@@ -1,5 +1,5 @@
 //
-//  Lesson.swift
+//  Group.swift
 //  Mercury
 //
 //  Created by Andrey  Grechko on 06.05.2020.
@@ -8,11 +8,7 @@
 
 import Foundation
 
-class Lesson: Decodable {
+class Group: Decodable {
     var ID: Int
-    var theme: String
-    var homework: String
-    var group_id: Int
-    var datedmy: String
-    var times: String
+    var NameInfo: String
 }

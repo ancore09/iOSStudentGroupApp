@@ -71,7 +71,7 @@ class LessonDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        configureNavigationBar(withTitle: lesson.datedmy, prefersLargeTitles: true)
+        navigationItem.title = lesson.datedmy
         configureUI()
     }
     

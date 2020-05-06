@@ -27,7 +27,10 @@ class NewsController: UIViewController {
         configureBaseUI(withNavBarTitle: "News", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
         configureCollectionView()
         
-        fetchNews(forGroupId: 1)
+        //fetchNews(forGroupId: 1)
+        DataRepository.shared.authUser(login: "rollingworld", hash: "356a192b7913b04c54574d18c28d46e6395428ab") { (user) in
+            print(user.memberData?.nick)
+        }
     }
 
     //MARK: Helpers
