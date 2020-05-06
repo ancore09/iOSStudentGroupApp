@@ -8,4 +8,6 @@ target 'Mercury' do
   # Pods for Mercury
 	pod 'SDWebImage','~>4.4.2'
 	pod 'JGProgressHUD','~>2.0.3'
+	pod 'Socket.IO-Client-Swift','~> 15.2.0'
+	pod 'SwiftyJSON', '~> 4.0'
 end

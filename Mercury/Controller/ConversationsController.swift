@@ -68,7 +68,9 @@ extension ConversationsController: UITableViewDataSource {
 
 extension ConversationsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let group = DataRepository.shared.groups![indexPath.row]
+        let controller = ChatController(group: group)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

@@ -125,14 +125,14 @@ extension UIViewController {
     func configureBaseUI(withNavBarTitle: String, withNavBarColor: UIColor, navBarPrefersLargeTitles: Bool) {
         configureNavigationBar(withTitle: withNavBarTitle, prefersLargeTitles: navBarPrefersLargeTitles)
         navigationController?.navigationBar.layer.shadowOffset = .init(width: 0, height: 8)
-        navigationController?.navigationBar.layer.shadowOpacity = 0.75
+        navigationController?.navigationBar.layer.shadowOpacity = 0.25
         navigationController?.navigationBar.layer.shadowRadius = 10
-        navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+        navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
         
         tabBarController?.tabBar.layer.shadowOffset = .init(width: 0, height: -8)
-        tabBarController?.tabBar.layer.shadowOpacity = 0.75
+        tabBarController?.tabBar.layer.shadowOpacity = 0.25
         tabBarController?.tabBar.layer.shadowRadius = 10
-        tabBarController?.tabBar.layer.shadowColor = UIColor.lightGray.cgColor
+        tabBarController?.tabBar.layer.shadowColor = UIColor.black.cgColor
     }
 }
 

@@ -16,6 +16,7 @@ protocol AuthenticationControllerProtocol {
 class LoginController: UIViewController {
     
     private var viewModel = LoginViewModel()
+    private let defaults = UserDefaults.standard
     
     private let iconImage: UIImageView = {
        let iv = UIImageView()
@@ -26,13 +27,11 @@ class LoginController: UIViewController {
     
     private lazy var emailContainer: UIView = {
         let containerView = InputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"), textField: emailTextField)
-        
         return containerView
     }()
     
     private lazy var passwordContainer: InputContainerView = {
         let containerView = InputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textField: passwordTextField)
-        
         return containerView
     }()
     
@@ -49,7 +48,7 @@ class LoginController: UIViewController {
         return button
     }()
     
-    private let emailTextField = CustomTextField(placeholder: "Email")
+    private let emailTextField = CustomTextField(placeholder: "Login")
     
     private let passwordTextField: CustomTextField = {
        let tf = CustomTextField(placeholder: "Password")
@@ -73,8 +72,17 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
-        configureUI()
+        if let login = defaults.string(forKey: Keys.LOGINKEY) {
+            if let passhash = defaults.string(forKey: Keys.PASSHASHKEY) {
+                DataRepository.shared.authUser(login: login, hash: passhash) { (user) in
+                    self.performSegue(withIdentifier: "showMainScreen", sender: nil)
+                }
+            }
+        } else {
+            configureUI()
+        }
     }
     
     @objc func handleShowSignUp() {
@@ -83,13 +91,14 @@ class LoginController: UIViewController {
     }
     
     @objc func handleLogin() {
-        guard let email = emailTextField.text else { return }
+        guard let login = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
         showLoader(true, withText: "Logging in")
         
-        DataRepository.shared.authUser(login: email, hash: password.sha1()) { (user) in
-            print(user.memberData!.nick)
+        DataRepository.shared.authUser(login: login, hash: password.sha1()) { (user) in
+            self.defaults.set(login, forKey: Keys.LOGINKEY)
+            self.defaults.set(password.sha1(), forKey: Keys.PASSHASHKEY)
             self.performSegue(withIdentifier: "showMainScreen", sender: nil)
         }
     }

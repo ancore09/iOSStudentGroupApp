@@ -11,4 +11,9 @@ import Foundation
 class MemberData: Decodable {
     var nick: String
     var color: String
+    
+    init(nick: String, color: String) {
+        self.nick = nick
+        self.color = color
+    }
 }

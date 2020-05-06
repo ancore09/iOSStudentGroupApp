@@ -76,10 +76,10 @@ class LessonCell: UICollectionViewCell {
         groupTextView.anchor(top: topAnchor, paddingTop: 2)
         
         addSubview(dateTextView)
-        dateTextView.anchor(top: groupTextView.bottomAnchor, right: rightAnchor, paddingTop: 8, paddingRight: 4)
+        dateTextView.anchor(top: groupTextView.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingRight: 4)
         
         addSubview(themeTextView)
-        themeTextView.anchor(top: groupTextView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: dateTextView.leftAnchor, paddingTop: 8, paddingLeft: 4, paddingBottom: 4)
+        themeTextView.anchor(top: groupTextView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: dateTextView.leftAnchor, paddingTop: 0, paddingLeft: 4, paddingBottom: 0)
         
         addSubview(timeTextView)
         timeTextView.anchor(top: dateTextView.bottomAnchor, bottom: bottomAnchor, right: rightAnchor, paddingBottom: 2, paddingRight: 4)
