@@ -13,4 +13,5 @@ class Lesson: Decodable {
     var homework: String
     var group_id: Int
     var datedmy: String
+    var times: String
 }

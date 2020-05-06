@@ -32,7 +32,6 @@ class JournalController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar(withTitle: "Journal", prefersLargeTitles: false)
-        tabBarController?.tabBar.isHidden = false
     }
     
     //MARK: Selectors
@@ -92,7 +91,6 @@ extension JournalController: UICollectionViewDelegateFlowLayout, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = LessonDetailsController(lesson: lessons[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
-        tabBarController?.tabBar.isHidden = true
     }
 }
 

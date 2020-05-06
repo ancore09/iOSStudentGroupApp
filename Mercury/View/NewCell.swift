@@ -27,7 +27,7 @@ class NewCell: UICollectionViewCell {
     private let titleTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
-        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.font = UIFont.boldSystemFont(ofSize: 18)
         tv.isScrollEnabled = false
         tv.isEditable = false
         tv.textColor = .black
@@ -75,15 +75,12 @@ class NewCell: UICollectionViewCell {
         
         addSubview(titleTextView)
         titleTextView.anchor(top: imageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4)
-        //titleTextView.backgroundColor = .gray
         
         addSubview(bodyTextView)
         bodyTextView.anchor(top: titleTextView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4)
-        //bodyTextView.backgroundColor = .gray
         
         addSubview(epilTextView)
         epilTextView.anchor(top: bodyTextView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4)
-        //epilTextView.backgroundColor = .gray
     }
     
     func configure() {

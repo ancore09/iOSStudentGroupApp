@@ -45,6 +45,16 @@ class LessonCell: UICollectionViewCell {
         return tv
     }()
     
+    private let timeTextView: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = .clear
+        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.isScrollEnabled = false
+        tv.isEditable = false
+        tv.textColor = .black
+        return tv
+    }()
+    
     //MARK: Lifecycle
     
     override init(frame: CGRect) {
@@ -71,13 +81,16 @@ class LessonCell: UICollectionViewCell {
         addSubview(themeTextView)
         themeTextView.anchor(top: groupTextView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: dateTextView.leftAnchor, paddingTop: 8, paddingLeft: 4, paddingBottom: 4)
         
+        addSubview(timeTextView)
+        timeTextView.anchor(top: dateTextView.bottomAnchor, bottom: bottomAnchor, right: rightAnchor, paddingBottom: 2, paddingRight: 4)
     }
     
     func configure() {
-        groupTextView.text = String(lesson!.group_id)
+//        groupTextView.text = String(lesson!.group_id)
+        groupTextView.text = "Samsung IT School"
         themeTextView.text = lesson?.theme
         dateTextView.text = lesson?.datedmy
-        
+        timeTextView.text = lesson?.times
     }
     
     //MARK: API
