@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Lesson {
+class Lesson: Decodable {
     var theme: String
     var homework: String
-    var group: String
-    var date: String
+    var group_id: Int
+    var datedmy: String
 }

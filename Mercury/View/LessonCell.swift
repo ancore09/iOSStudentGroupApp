@@ -74,9 +74,9 @@ class LessonCell: UICollectionViewCell {
     }
     
     func configure() {
-        groupTextView.text = lesson?.group
+        groupTextView.text = String(lesson!.group_id)
         themeTextView.text = lesson?.theme
-        dateTextView.text = lesson?.date
+        dateTextView.text = lesson?.datedmy
         
     }
     

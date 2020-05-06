@@ -14,12 +14,7 @@ class JournalController: UIViewController {
     
     //MARK: Properties
     
-    private let lessons: [Lesson] = [
-                            Lesson(theme: "Curabitur finibus nulla ac volutpat lobortis. In nec nulla in ligula rutrum dapibus. Etiam pharetra hendrerit vehicula. Etiam vitae est facilisis erat ultrices egestas. Nunc eros sem, pellentesque non mi iaculis, porta consectetur nisi. Nam sed vestibulum neque. Integer sed fermentum lorem. Etiam porta leo risus, ut dapibus neque iaculis mattis. Proin a orci tempor, ultricies orci a, consectetur massa. Mauris cursus dignissim nisl nec congue.", homework: "Homework", group: "Group", date: "10.10.10"),
-                            Lesson(theme: "Theme", homework: "Homework", group: "Group", date: "10.10.10"),
-                            Lesson(theme: "Theme", homework: "Homework", group: "Group", date: "10.10.10"),
-                            Lesson(theme: "Theme", homework: "Homework", group: "Group", date: "10.10.10"),
-                            Lesson(theme: "Theme", homework: "Homework", group: "Group", date: "10.10.10")]
+    private var lessons = [Lesson]()
     
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewFlowLayout())
     
@@ -30,6 +25,14 @@ class JournalController: UIViewController {
         overrideUserInterfaceStyle = .light
         configureBaseUI(withNavBarTitle: "Journal", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
         configureCollectionView()
+        
+        fetchLessons()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar(withTitle: "Journal", prefersLargeTitles: false)
+        tabBarController?.tabBar.isHidden = false
     }
     
     //MARK: Selectors
@@ -47,6 +50,15 @@ class JournalController: UIViewController {
     }
     
     //MARK: API
+    
+    func fetchLessons() {
+        showLoader(true)
+        LessonService.shared.fetchLessons(forGroupId: 1, forUserId: 1) { (lessons) in
+            self.showLoader(false)
+            self.lessons = lessons
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension JournalController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -78,7 +90,9 @@ extension JournalController: UICollectionViewDelegateFlowLayout, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let controller = LessonDetailsController(lesson: lessons[indexPath.row])
+        navigationController?.pushViewController(controller, animated: true)
+        tabBarController?.tabBar.isHidden = true
     }
 }
 
