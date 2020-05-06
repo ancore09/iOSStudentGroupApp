@@ -12,7 +12,7 @@ class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .light
         configureBaseUI(withNavBarTitle: "Chat", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
     }
 

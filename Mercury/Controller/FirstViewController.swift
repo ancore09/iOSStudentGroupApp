@@ -30,6 +30,8 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
+        tabBarController?.tabBar.overrideUserInterfaceStyle = .light
         configureBaseUI(withNavBarTitle: "News", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
         configureCollectionView()
     }
