@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		772A65D92462DBAC0081CD93 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65D82462DBAC0081CD93 /* ProfileController.swift */; };
 		772A65DB2462DF170081CD93 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65DA2462DF170081CD93 /* LessonCell.swift */; };
 		772A65DF2462E6230081CD93 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65DE2462E6230081CD93 /* NewsService.swift */; };
+		772A65E12462F9B40081CD93 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65E02462F9B40081CD93 /* LessonService.swift */; };
 		7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A852245F3D0600A5E33F /* AppDelegate.swift */; };
 		7793A855245F3D0600A5E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A854245F3D0600A5E33F /* SceneDelegate.swift */; };
 		7793A857245F3D0600A5E33F /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A856245F3D0600A5E33F /* NewsController.swift */; };
@@ -22,9 +23,12 @@
 		7793A85E245F3D0700A5E33F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85D245F3D0700A5E33F /* Assets.xcassets */; };
 		7793A861245F3D0700A5E33F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85F245F3D0700A5E33F /* LaunchScreen.storyboard */; };
 		7793A869245F3DDD00A5E33F /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A868245F3DDD00A5E33F /* ChatController.swift */; };
+		CB1AE490FFD7E9EB33A1E9FC /* Pods_Mercury.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F3912A617C3DEF1B892508 /* Pods_Mercury.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67F3912A617C3DEF1B892508 /* Pods_Mercury.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mercury.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DE48AA12B5BD4B4EC63FF7D /* Pods-Mercury.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercury.debug.xcconfig"; path = "Target Support Files/Pods-Mercury/Pods-Mercury.debug.xcconfig"; sourceTree = "<group>"; };
 		772A65D02462BC310081CD93 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		772A65D22462CCB00081CD93 /* NewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCell.swift; sourceTree = "<group>"; };
 		772A65D42462CD260081CD93 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
@@ -32,6 +36,7 @@
 		772A65D82462DBAC0081CD93 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		772A65DA2462DF170081CD93 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		772A65DE2462E6230081CD93 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		772A65E02462F9B40081CD93 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
 		7793A84F245F3D0600A5E33F /* Mercury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7793A852245F3D0600A5E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7793A854245F3D0600A5E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		7793A860245F3D0700A5E33F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7793A862245F3D0700A5E33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7793A868245F3DDD00A5E33F /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		D83DEA1AA3C3ADBC5F3AA306 /* Pods-Mercury.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercury.release.xcconfig"; path = "Target Support Files/Pods-Mercury/Pods-Mercury.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +55,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1AE490FFD7E9EB33A1E9FC /* Pods_Mercury.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0B49E6EDD38C8883489604 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DE48AA12B5BD4B4EC63FF7D /* Pods-Mercury.debug.xcconfig */,
+				D83DEA1AA3C3ADBC5F3AA306 /* Pods-Mercury.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		772A65CA2462BBDF0081CD93 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				772A65DE2462E6230081CD93 /* NewsService.swift */,
+				772A65E02462F9B40081CD93 /* LessonService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -112,6 +129,8 @@
 			children = (
 				7793A851245F3D0600A5E33F /* Mercury */,
 				7793A850245F3D0600A5E33F /* Products */,
+				0A0B49E6EDD38C8883489604 /* Pods */,
+				C57A085ECA56223763A1455A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +161,14 @@
 			path = Mercury;
 			sourceTree = "<group>";
 		};
+		C57A085ECA56223763A1455A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67F3912A617C3DEF1B892508 /* Pods_Mercury.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7793A865245F3D0700A5E33F /* Build configuration list for PBXNativeTarget "Mercury" */;
 			buildPhases = (
+				483FF87A022022B32C9751F6 /* [CP] Check Pods Manifest.lock */,
 				7793A84B245F3D0600A5E33F /* Sources */,
 				7793A84C245F3D0600A5E33F /* Frameworks */,
 				7793A84D245F3D0600A5E33F /* Resources */,
+				FE369D53AA54BBBEC58A2107 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +237,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		483FF87A022022B32C9751F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mercury-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE369D53AA54BBBEC58A2107 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mercury/Pods-Mercury-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mercury/Pods-Mercury-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mercury/Pods-Mercury-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7793A84B245F3D0600A5E33F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,6 +289,7 @@
 				772A65D12462BC310081CD93 /* Extensions.swift in Sources */,
 				772A65D32462CCB00081CD93 /* NewCell.swift in Sources */,
 				7793A857245F3D0600A5E33F /* NewsController.swift in Sources */,
+				772A65E12462F9B40081CD93 /* LessonService.swift in Sources */,
 				772A65DB2462DF170081CD93 /* LessonCell.swift in Sources */,
 				772A65DF2462E6230081CD93 /* NewsService.swift in Sources */,
 				772A65D92462DBAC0081CD93 /* ProfileController.swift in Sources */,
@@ -366,6 +438,7 @@
 		};
 		7793A866245F3D0700A5E33F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE48AA12B5BD4B4EC63FF7D /* Pods-Mercury.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -385,6 +458,7 @@
 		};
 		7793A867245F3D0700A5E33F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D83DEA1AA3C3ADBC5F3AA306 /* Pods-Mercury.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

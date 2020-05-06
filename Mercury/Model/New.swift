@@ -13,11 +13,13 @@ class New: Decodable {
     var body: String
     var epilogue: String
     var datedmy: String
+    var filehash: String
     
-    init(title: String, body: String, epil: String, date: String) {
+    init(title: String, body: String, epil: String, date: String, filehash: String) {
         self.title = title
         self.body = body
         self.epilogue = epil
         self.datedmy = date
+        self.filehash = filehash
     }
 }

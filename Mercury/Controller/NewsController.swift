@@ -14,19 +14,21 @@ class NewsController: UIViewController {
     
     //MARK: Properties
     
-    private var news: [New] = [
-                        New(title: "Title",
-                            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus pellentesque lacus, ut dignissim est. Nam arcu ligula, aliquet non lacinia id, tempor id ante. Donec et dolor vestibulum, molestie dolor at, imperdiet leo. Nullam auctor vehicula purus, sit amet cursus eros iaculis at. Nullam interdum eu lacus ac efficitur. Aenean eu augue tempus, feugiat tortor quis, sodales ante. Duis vehicula erat sit amet iaculis tincidunt. Ut urna neque, tincidunt vitae aliquet in, blandit vitae ipsum. Curabitur a ipsum nec dui vestibulum tincidunt. Duis imperdiet vel erat a elementum.",
-                            epil: "Epil",
-                            date: "10.10.10"),
-                        New(title: "Title",
-                            body: "Curabitur finibus nulla ac volutpat lobortis. In nec nulla in ligula rutrum dapibus. Etiam pharetra hendrerit vehicula. Etiam vitae est facilisis erat ultrices egestas. Nunc eros sem, pellentesque non mi iaculis, porta consectetur nisi. Nam sed vestibulum neque. Integer sed fermentum lorem. Etiam porta leo risus, ut dapibus neque iaculis mattis. Proin a orci tempor, ultricies orci a, consectetur massa. Mauris cursus dignissim nisl nec congue.",
-                            epil: "Epil",
-                            date: "10.10.10"),
-                        New(title: "Title",
-                            body: "Nulla a nibh iaculis erat porta rhoncus nec posuere velit. Morbi arcu erat, molestie non justo posuere, maximus ultricies quam. In ornare elit a est facilisis blandit. Integer ornare fermentum molestie. Ut gravida malesuada purus, sit amet pulvinar erat lobortis sagittis. Nulla rutrum est nec elit consectetur pretium. Donec vitae quam eros. Praesent ut lectus sollicitudin, varius odio non, tempus purus. Nulla vestibulum, urna eu placerat consectetur, sapien justo porta purus, a dictum metus mauris ut neque. Suspendisse potenti. Maecenas rutrum commodo ante, nec congue enim vestibulum id.",
-                            epil: "Epil",
-                            date: "10.10.10")]
+//    private var news: [New] = [
+//                        New(title: "Title",
+//                            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus pellentesque lacus, ut dignissim est. Nam arcu ligula, aliquet non lacinia id, tempor id ante. Donec et dolor vestibulum, molestie dolor at, imperdiet leo. Nullam auctor vehicula purus, sit amet cursus eros iaculis at. Nullam interdum eu lacus ac efficitur. Aenean eu augue tempus, feugiat tortor quis, sodales ante. Duis vehicula erat sit amet iaculis tincidunt. Ut urna neque, tincidunt vitae aliquet in, blandit vitae ipsum. Curabitur a ipsum nec dui vestibulum tincidunt. Duis imperdiet vel erat a elementum.",
+//                            epil: "Epil",
+//                            date: "10.10.10"),
+//                        New(title: "Title",
+//                            body: "Curabitur finibus nulla ac volutpat lobortis. In nec nulla in ligula rutrum dapibus. Etiam pharetra hendrerit vehicula. Etiam vitae est facilisis erat ultrices egestas. Nunc eros sem, pellentesque non mi iaculis, porta consectetur nisi. Nam sed vestibulum neque. Integer sed fermentum lorem. Etiam porta leo risus, ut dapibus neque iaculis mattis. Proin a orci tempor, ultricies orci a, consectetur massa. Mauris cursus dignissim nisl nec congue.",
+//                            epil: "Epil",
+//                            date: "10.10.10"),
+//                        New(title: "Title",
+//                            body: "Nulla a nibh iaculis erat porta rhoncus nec posuere velit. Morbi arcu erat, molestie non justo posuere, maximus ultricies quam. In ornare elit a est facilisis blandit. Integer ornare fermentum molestie. Ut gravida malesuada purus, sit amet pulvinar erat lobortis sagittis. Nulla rutrum est nec elit consectetur pretium. Donec vitae quam eros. Praesent ut lectus sollicitudin, varius odio non, tempus purus. Nulla vestibulum, urna eu placerat consectetur, sapien justo porta purus, a dictum metus mauris ut neque. Suspendisse potenti. Maecenas rutrum commodo ante, nec congue enim vestibulum id.",
+//                            epil: "Epil",
+//                            date: "10.10.10")]
+    
+    private var news = [New]()
     
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewFlowLayout())
     

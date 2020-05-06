@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewCell: UICollectionViewCell {
     //MARK: Properties
@@ -17,7 +18,7 @@ class NewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .systemGray
+        //iv.backgroundColor = .systemGray
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
@@ -89,6 +90,9 @@ class NewCell: UICollectionViewCell {
         titleTextView.text = new?.title
         bodyTextView.text = new?.body
         epilTextView.text = new?.epilogue
+        
+        let url = "http://194.67.92.182:3000/\(new!.filehash)"
+        imageView.sd_setImage(with: URL(string: url), completed: nil)
     }
     
     //MARK: API
