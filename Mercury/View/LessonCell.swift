@@ -1,5 +1,5 @@
 //
-//  NewCell.swift
+//  LessonCell.swift
 //  Mercury
 //
 //  Created by Andrey  Grechko on 06.05.2020.
@@ -8,22 +8,14 @@
 
 import UIKit
 
-class NewCell: UICollectionViewCell {
+class LessonCell: UICollectionViewCell {
     //MARK: Properties
     
-    var new: New? {
+    var lesson: Lesson? {
         didSet { configure() }
     }
     
-    private let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.backgroundColor = .systemGray
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        return iv
-    }()
-    
-    private let titleTextView: UITextView = {
+    private let groupTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.font = UIFont.systemFont(ofSize: 16)
@@ -33,7 +25,7 @@ class NewCell: UICollectionViewCell {
         return tv
     }()
     
-    private let bodyTextView: UITextView = {
+    private let themeTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.font = UIFont.systemFont(ofSize: 16)
@@ -43,7 +35,7 @@ class NewCell: UICollectionViewCell {
         return tv
     }()
     
-    private let epilTextView: UITextView = {
+    private let dateTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.font = UIFont.systemFont(ofSize: 16)
@@ -69,27 +61,25 @@ class NewCell: UICollectionViewCell {
     //MARK: Helpers
     
     func configureView() {
-        addSubview(imageView)
-        imageView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 200)
+        addSubview(groupTextView)
+        groupTextView.centerX(inView: self)
+        groupTextView.anchor(top: topAnchor, paddingTop: 2)
         
-        addSubview(titleTextView)
-        titleTextView.anchor(top: imageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4)
-        //titleTextView.backgroundColor = .gray
+        addSubview(dateTextView)
+        dateTextView.anchor(top: groupTextView.bottomAnchor, right: rightAnchor, paddingTop: 8, paddingRight: 4)
         
-        addSubview(bodyTextView)
-        bodyTextView.anchor(top: titleTextView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 4)
-        //bodyTextView.backgroundColor = .gray
+        addSubview(themeTextView)
+        themeTextView.anchor(top: groupTextView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: dateTextView.leftAnchor, paddingTop: 8, paddingLeft: 4, paddingBottom: 4)
         
-        addSubview(epilTextView)
-        epilTextView.anchor(top: bodyTextView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4)
-        //epilTextView.backgroundColor = .gray
     }
     
     func configure() {
-        titleTextView.text = new?.title
-        bodyTextView.text = new?.body
-        epilTextView.text = new?.epil
+        groupTextView.text = lesson?.group
+        themeTextView.text = lesson?.theme
+        dateTextView.text = lesson?.date
+        
     }
     
     //MARK: API
 }
+

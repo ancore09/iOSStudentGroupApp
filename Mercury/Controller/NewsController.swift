@@ -10,7 +10,9 @@ import UIKit
 
 private let reuseId = "NewCell"
 
-class FirstViewController: UIViewController {
+class NewsController: UIViewController {
+    
+    //MARK: Properties
     
     private let news: [New] = [
                         New(title: "Title",
@@ -28,6 +30,8 @@ class FirstViewController: UIViewController {
     
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewFlowLayout())
     
+    //MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
@@ -36,8 +40,10 @@ class FirstViewController: UIViewController {
         configureCollectionView()
     }
 
+    //MARK: Helpers
+    
     func configureCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = #colorLiteral(red: 0.8899991512, green: 0.8901486993, blue: 0.8899795413, alpha: 1)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(NewCell.self, forCellWithReuseIdentifier: reuseId)
@@ -47,7 +53,9 @@ class FirstViewController: UIViewController {
     }
 }
 
-extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    //MARK: CollectionViewStuff
+
+extension NewsController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return news.count
     }
@@ -55,6 +63,7 @@ extension FirstViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! NewCell
         cell.new = news[indexPath.row]
+        cell.backgroundColor = .white
         return cell
     }
     

@@ -10,30 +10,38 @@
 		772A65D12462BC310081CD93 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65D02462BC310081CD93 /* Extensions.swift */; };
 		772A65D32462CCB00081CD93 /* NewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65D22462CCB00081CD93 /* NewCell.swift */; };
 		772A65D52462CD260081CD93 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65D42462CD260081CD93 /* New.swift */; };
+		772A65D72462DB740081CD93 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65D62462DB740081CD93 /* Lesson.swift */; };
+		772A65D92462DBAC0081CD93 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65D82462DBAC0081CD93 /* ProfileController.swift */; };
+		772A65DB2462DF170081CD93 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65DA2462DF170081CD93 /* LessonCell.swift */; };
+		772A65DF2462E6230081CD93 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65DE2462E6230081CD93 /* NewsService.swift */; };
 		7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A852245F3D0600A5E33F /* AppDelegate.swift */; };
 		7793A855245F3D0600A5E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A854245F3D0600A5E33F /* SceneDelegate.swift */; };
-		7793A857245F3D0600A5E33F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A856245F3D0600A5E33F /* FirstViewController.swift */; };
-		7793A859245F3D0600A5E33F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A858245F3D0600A5E33F /* SecondViewController.swift */; };
+		7793A857245F3D0600A5E33F /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A856245F3D0600A5E33F /* NewsController.swift */; };
+		7793A859245F3D0600A5E33F /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A858245F3D0600A5E33F /* JournalController.swift */; };
 		7793A85C245F3D0600A5E33F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85A245F3D0600A5E33F /* Main.storyboard */; };
 		7793A85E245F3D0700A5E33F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85D245F3D0700A5E33F /* Assets.xcassets */; };
 		7793A861245F3D0700A5E33F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85F245F3D0700A5E33F /* LaunchScreen.storyboard */; };
-		7793A869245F3DDD00A5E33F /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A868245F3DDD00A5E33F /* ThirdViewController.swift */; };
+		7793A869245F3DDD00A5E33F /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A868245F3DDD00A5E33F /* ChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		772A65D02462BC310081CD93 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		772A65D22462CCB00081CD93 /* NewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCell.swift; sourceTree = "<group>"; };
 		772A65D42462CD260081CD93 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
+		772A65D62462DB740081CD93 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		772A65D82462DBAC0081CD93 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		772A65DA2462DF170081CD93 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
+		772A65DE2462E6230081CD93 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		7793A84F245F3D0600A5E33F /* Mercury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7793A852245F3D0600A5E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7793A854245F3D0600A5E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7793A856245F3D0600A5E33F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		7793A858245F3D0600A5E33F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		7793A856245F3D0600A5E33F /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		7793A858245F3D0600A5E33F /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		7793A85B245F3D0600A5E33F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7793A85D245F3D0700A5E33F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7793A860245F3D0700A5E33F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7793A862245F3D0700A5E33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7793A868245F3DDD00A5E33F /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		7793A868245F3DDD00A5E33F /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				772A65D42462CD260081CD93 /* New.swift */,
+				772A65D62462DB740081CD93 /* Lesson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -59,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				772A65D22462CCB00081CD93 /* NewCell.swift */,
+				772A65DA2462DF170081CD93 /* LessonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -73,9 +83,10 @@
 		772A65CD2462BBF60081CD93 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7793A856245F3D0600A5E33F /* FirstViewController.swift */,
-				7793A858245F3D0600A5E33F /* SecondViewController.swift */,
-				7793A868245F3DDD00A5E33F /* ThirdViewController.swift */,
+				7793A856245F3D0600A5E33F /* NewsController.swift */,
+				7793A858245F3D0600A5E33F /* JournalController.swift */,
+				7793A868245F3DDD00A5E33F /* ChatController.swift */,
+				772A65D82462DBAC0081CD93 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -83,6 +94,7 @@
 		772A65CE2462BBFC0081CD93 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				772A65DE2462E6230081CD93 /* NewsService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -201,11 +213,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7793A859245F3D0600A5E33F /* SecondViewController.swift in Sources */,
+				772A65D72462DB740081CD93 /* Lesson.swift in Sources */,
+				7793A859245F3D0600A5E33F /* JournalController.swift in Sources */,
 				772A65D12462BC310081CD93 /* Extensions.swift in Sources */,
 				772A65D32462CCB00081CD93 /* NewCell.swift in Sources */,
-				7793A857245F3D0600A5E33F /* FirstViewController.swift in Sources */,
-				7793A869245F3DDD00A5E33F /* ThirdViewController.swift in Sources */,
+				7793A857245F3D0600A5E33F /* NewsController.swift in Sources */,
+				772A65DB2462DF170081CD93 /* LessonCell.swift in Sources */,
+				772A65DF2462E6230081CD93 /* NewsService.swift in Sources */,
+				772A65D92462DBAC0081CD93 /* ProfileController.swift in Sources */,
+				7793A869245F3DDD00A5E33F /* ChatController.swift in Sources */,
 				7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */,
 				772A65D52462CD260081CD93 /* New.swift in Sources */,
 				7793A855245F3D0600A5E33F /* SceneDelegate.swift in Sources */,

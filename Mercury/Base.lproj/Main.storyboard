@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--News Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="NewsController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="-791.304347826087" y="1506.6964285714284"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Journal Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="JournalController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="1507"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Chat Controller-->
         <scene sceneID="LSL-8j-IiX">
             <objects>
-                <viewController id="1KT-nN-0Ee" customClass="ThirdViewController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1KT-nN-0Ee" customClass="ChatController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bK5-Fz-QIM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,11 +136,12 @@
                         <segue destination="wus-DB-slM" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="Xa6-ku-SkQ" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="n2a-CU-ZZn" kind="relationship" relationship="viewControllers" id="6ra-C7-raS"/>
+                        <segue destination="Wny-uf-x5n" kind="relationship" relationship="viewControllers" id="tYb-Ug-2Bw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="457" y="-156"/>
         </scene>
         <!--News-->
         <scene sceneID="WvU-s8-fYE">
@@ -199,10 +200,46 @@
             </objects>
             <point key="canvasLocation" x="850.72463768115949" y="752.67857142857144"/>
         </scene>
+        <!--Profile Controller-->
+        <scene sceneID="ISO-OH-F1Q">
+            <objects>
+                <viewController id="Qih-cy-Rvb" customClass="ProfileController" customModule="Mercury" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jts-M7-zlg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IUo-Kx-zQ8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iku-L1-JVA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CfV-jD-Ljb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="1507"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="ciY-0L-i7D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wny-uf-x5n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="QtH-Ub-BAB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nqq-0k-Bgf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qih-cy-Rvb" kind="relationship" relationship="rootViewController" id="HGn-aT-gpg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wuv-K3-Osa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.7246376811595" y="752.67857142857144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="message" catalog="system" width="64" height="56"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
         <image name="table" catalog="system" width="64" height="46"/>
     </resources>
 </document>
