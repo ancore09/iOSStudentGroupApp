@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  Mercury
 //
 //  Created by Andrey  Grechko on 03.05.2020.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        configureBaseUI(withNavBarTitle: "Journal", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
     }
 
 

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  ThirdViewController.swift
 //  Mercury
 //
 //  Created by Andrey  Grechko on 03.05.2020.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        configureBaseUI(withNavBarTitle: "Chat", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
     }
 
-
 }
-
