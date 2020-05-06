@@ -17,7 +17,6 @@
 		772A65E12462F9B40081CD93 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65E02462F9B40081CD93 /* LessonService.swift */; };
 		772A65E32462FE2C0081CD93 /* LessonDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65E22462FE2C0081CD93 /* LessonDetailsController.swift */; };
 		772A65E5246313870081CD93 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65E4246313870081CD93 /* DataRepository.swift */; };
-		772A65E7246314A00081CD93 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65E6246314A00081CD93 /* ConversationCell.swift */; };
 		772A65E9246316980081CD93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65E8246316980081CD93 /* User.swift */; };
 		772A65EB246319F50081CD93 /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65EA246319F50081CD93 /* MemberData.swift */; };
 		772A65ED24631BB80081CD93 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A65EC24631BB80081CD93 /* Group.swift */; };
@@ -35,6 +34,7 @@
 		772A6612246349530081CD93 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A6611246349530081CD93 /* Message.swift */; };
 		772A6614246349EB0081CD93 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A6613246349EB0081CD93 /* MessageViewModel.swift */; };
 		772A661624634B4C0081CD93 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A661524634B4C0081CD93 /* CustomInputAccessoryView.swift */; };
+		772A66182463830B0081CD93 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A66172463830B0081CD93 /* ConversationCell.swift */; };
 		7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A852245F3D0600A5E33F /* AppDelegate.swift */; };
 		7793A855245F3D0600A5E33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A854245F3D0600A5E33F /* SceneDelegate.swift */; };
 		7793A857245F3D0600A5E33F /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A856245F3D0600A5E33F /* NewsController.swift */; };
@@ -59,7 +59,6 @@
 		772A65E02462F9B40081CD93 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
 		772A65E22462FE2C0081CD93 /* LessonDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailsController.swift; sourceTree = "<group>"; };
 		772A65E4246313870081CD93 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
-		772A65E6246314A00081CD93 /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationCell.swift; path = ../../../ChatApp/ChatApp/ChatApp/View/ConversationCell.swift; sourceTree = "<group>"; };
 		772A65E8246316980081CD93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		772A65EA246319F50081CD93 /* MemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
 		772A65EC24631BB80081CD93 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		772A6611246349530081CD93 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		772A6613246349EB0081CD93 /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		772A661524634B4C0081CD93 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		772A66172463830B0081CD93 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		7793A84F245F3D0600A5E33F /* Mercury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7793A852245F3D0600A5E33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7793A854245F3D0600A5E33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				772A660F2463493B0081CD93 /* MessageCell.swift */,
 				772A6603246328100081CD93 /* CustomTextField.swift */,
 				772A6604246328100081CD93 /* InputContainerView.swift */,
-				772A65E6246314A00081CD93 /* ConversationCell.swift */,
+				772A66172463830B0081CD93 /* ConversationCell.swift */,
 				772A65D22462CCB00081CD93 /* NewCell.swift */,
 				772A65DA2462DF170081CD93 /* LessonCell.swift */,
 			);
@@ -374,12 +374,12 @@
 				772A660A2463283F0081CD93 /* RegViewModel.swift in Sources */,
 				772A65E9246316980081CD93 /* User.swift in Sources */,
 				772A65FD246327C60081CD93 /* LoginController.swift in Sources */,
+				772A66182463830B0081CD93 /* ConversationCell.swift in Sources */,
 				772A65E12462F9B40081CD93 /* LessonService.swift in Sources */,
 				772A65DB2462DF170081CD93 /* LessonCell.swift in Sources */,
 				772A65DF2462E6230081CD93 /* NewsService.swift in Sources */,
 				772A65D92462DBAC0081CD93 /* ProfileController.swift in Sources */,
 				7793A869245F3DDD00A5E33F /* ConversationsController.swift in Sources */,
-				772A65E7246314A00081CD93 /* ConversationCell.swift in Sources */,
 				7793A853245F3D0600A5E33F /* AppDelegate.swift in Sources */,
 				772A65EB246319F50081CD93 /* MemberData.swift in Sources */,
 				772A65D52462CD260081CD93 /* New.swift in Sources */,

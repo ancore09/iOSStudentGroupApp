@@ -59,7 +59,7 @@ extension ConversationsController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! ConversationCell
-        cell.groupName = DataRepository.shared.groups![indexPath.row].NameInfo
+        cell.group = DataRepository.shared.groups![indexPath.row]
         return cell
     }
     
