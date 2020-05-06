@@ -8,9 +8,16 @@
 
 import Foundation
 
-struct New {
+class New: Decodable {
     var title: String
     var body: String
-    var epil: String
-    var date: String
+    var epilogue: String
+    var datedmy: String
+    
+    init(title: String, body: String, epil: String, date: String) {
+        self.title = title
+        self.body = body
+        self.epilogue = epil
+        self.datedmy = date
+    }
 }

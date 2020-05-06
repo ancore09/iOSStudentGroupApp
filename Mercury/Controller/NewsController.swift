@@ -14,7 +14,7 @@ class NewsController: UIViewController {
     
     //MARK: Properties
     
-    private let news: [New] = [
+    private var news: [New] = [
                         New(title: "Title",
                             body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus pellentesque lacus, ut dignissim est. Nam arcu ligula, aliquet non lacinia id, tempor id ante. Donec et dolor vestibulum, molestie dolor at, imperdiet leo. Nullam auctor vehicula purus, sit amet cursus eros iaculis at. Nullam interdum eu lacus ac efficitur. Aenean eu augue tempus, feugiat tortor quis, sodales ante. Duis vehicula erat sit amet iaculis tincidunt. Ut urna neque, tincidunt vitae aliquet in, blandit vitae ipsum. Curabitur a ipsum nec dui vestibulum tincidunt. Duis imperdiet vel erat a elementum.",
                             epil: "Epil",
@@ -38,6 +38,12 @@ class NewsController: UIViewController {
         tabBarController?.tabBar.overrideUserInterfaceStyle = .light
         configureBaseUI(withNavBarTitle: "News", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
         configureCollectionView()
+        
+        print("Trying to fetch")
+        NewsService.shared.fetchNews(forGroupId: 1) { (news) in
+            self.news = news
+            self.collectionView.reloadData()
+        }
     }
 
     //MARK: Helpers

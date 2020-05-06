@@ -88,7 +88,7 @@ class NewCell: UICollectionViewCell {
     func configure() {
         titleTextView.text = new?.title
         bodyTextView.text = new?.body
-        epilTextView.text = new?.epil
+        epilTextView.text = new?.epilogue
     }
     
     //MARK: API
