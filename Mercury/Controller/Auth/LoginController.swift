@@ -20,7 +20,7 @@ class LoginController: UIViewController {
     
     private let iconImage: UIImageView = {
        let iv = UIImageView()
-       iv.image = UIImage(systemName: "bubble.right")
+       iv.image = #imageLiteral(resourceName: "mercury_icon_1000px_png")
        iv.tintColor = .white
        return iv
     }()

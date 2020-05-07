@@ -29,7 +29,8 @@ class DataRepository {
         
         socket!.on(clientEvent: .connect) {data, ack in
             print("socket connected")
-            self.socket?.emit("changeRoom", ["new_id": result])
+            self.socket?.emit("changeRoom", ["new_id": result, "nick": self.user?.memberData?.nick])
+            self.socket?.emit("clients", ["room": result])
         }
         
         socket?.on("message", callback: { (data, ack) in
@@ -48,6 +49,11 @@ class DataRepository {
             } catch let error as NSError {
                 print("Failed to load: \(error.localizedDescription)")
             }
+            print(data)
+        })
+        
+        socket?.on("clients", callback: { (data, ack) in
+            print("ONLINE CLIENTS DATA")
             print(data)
         })
         
@@ -146,6 +152,11 @@ class DataRepository {
         } catch let error {
             print(error.localizedDescription)
         }
+    }
+    
+    func fetchOnlineUsers(forGroup: Group, completion: @escaping([Any]) -> Void) {
+        let result = forGroup.NameInfo.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+        socket?.emit("clients")
     }
     
     
