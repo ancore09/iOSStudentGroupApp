@@ -88,7 +88,9 @@ class MessageCell: UICollectionViewCell {
         usernameTextView.anchor(top: bubbleContainer.topAnchor, left: bubbleContainer.leftAnchor, right: bubbleContainer.rightAnchor, paddingTop: -19, paddingLeft: 4, paddingRight: 12)
         
         bubbleContainer.addSubview(textView)
-        textView.anchor(top: bubbleContainer.topAnchor, left: bubbleContainer.leftAnchor, bottom: bubbleContainer.bottomAnchor, right: bubbleContainer.rightAnchor, paddingTop: 4, paddingLeft: 12, paddingBottom: 4, paddingRight: 12)
+        textView.anchor(top: bubbleContainer.topAnchor, left: bubbleContainer.leftAnchor, /*bottom: bubbleContainer.bottomAnchor,*/ right: bubbleContainer.rightAnchor, paddingTop: 4, paddingLeft: 12, /*paddingBottom: 4,*/ paddingRight: 12)
+        textBottomAnchor = textView.bottomAnchor.constraint(equalTo: bubbleContainer.bottomAnchor, constant: -4)
+        textBottomAnchor.isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -120,12 +122,14 @@ class MessageCell: UICollectionViewCell {
         }
         
         if viewModel.hasImage {
-            addSubview(attachedImageView)
-            attachedImageView.anchor(top: bubbleContainer.bottomAnchor, left: bubbleContainer.leftAnchor, right: bubbleContainer.rightAnchor)
+            textBottomAnchor.isActive = false
+            
+            bubbleContainer.addSubview(attachedImageView)
+            attachedImageView.anchor(top: textView.bottomAnchor, left: bubbleContainer.leftAnchor, bottom: bubbleContainer.bottomAnchor, right: bubbleContainer.rightAnchor)
             attachedImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
             
             let url = "http://194.67.92.182:3000/\(message.fileHash!)"
-            attachedImageView.sd_setImage(with: URL(string: url), completed: nil)
+            self.attachedImageView.sd_setImage(with: URL(string: url), completed: nil)
         }
     }
 }

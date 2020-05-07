@@ -122,7 +122,8 @@ class DataRepository {
                     print(subJson)
                     let mm = subJson["memberData"]
                     let memberData = MemberData(nick: mm["nick"].stringValue, color: mm["color"].stringValue)
-                    let message = Message(id: subJson["ID"].int!, body: subJson["body"].stringValue, memberData: memberData, filehash: subJson["fileHash"].stringValue)
+                    let filehash = subJson["fileHash"].string
+                    let message = Message(id: subJson["ID"].int!, body: subJson["body"].stringValue, memberData: memberData, filehash: filehash)
                     messages.append(message)
                 }
             } catch let error {

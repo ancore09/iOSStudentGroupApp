@@ -40,7 +40,13 @@ struct MessageViewModel {
     }
     
     var hasImage: Bool {
-        return !message.fileHash!.isEmpty
+        if message.fileHash == nil {
+            return false
+        } else if message.fileHash == "" {
+            return false
+        } else {
+            return true
+        }
     }
     
     init(message: Message) {

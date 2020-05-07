@@ -43,6 +43,7 @@ class ChatController: UICollectionViewController {
         DataRepository.shared.initSocket { (message) in
             self.messages.append(message)
             self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: [0, self.messages.count - 1], at: .bottom, animated: true)
         }
     }
     
