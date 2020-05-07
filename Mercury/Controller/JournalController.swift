@@ -52,7 +52,7 @@ class JournalController: UIViewController {
     
     func fetchLessons() {
         showLoader(true)
-        LessonService.shared.fetchLessons(forGroupId: 1, forUserId: 1) { (lessons) in
+        LessonService.shared.fetchLessons(forGroups: DataRepository.shared.groups!, forUserId: DataRepository.shared.user!.ID) { (lessons) in
             self.showLoader(false)
             self.lessons = lessons
             self.collectionView.reloadData()

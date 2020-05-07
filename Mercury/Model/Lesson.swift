@@ -13,6 +13,8 @@ class Lesson: Decodable {
     var theme: String
     var homework: String
     var group_id: Int
+    var groupName: String?
     var datedmy: String
-    var times: String
+    var times: String?
+    var mark: Mark?
 }

@@ -35,6 +35,18 @@ class LessonDetailsController: UIViewController {
         return tv
     }()
     
+    private lazy var markTextView: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = .clear
+        tv.font = UIFont.boldSystemFont(ofSize: 20)
+        tv.isScrollEnabled = false
+        tv.isEditable = false
+        tv.textColor = .black
+        tv.text = "Mark: " + String(self.lesson.mark!.Mark)
+        tv.textColor = .systemBlue
+        return tv
+    }()
+
     private let homeworkTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
@@ -86,8 +98,11 @@ class LessonDetailsController: UIViewController {
         view.addSubview(themeInfoTextView)
         themeInfoTextView.anchor(top: themeTextView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 4, paddingRight: 4)
         
+        view.addSubview(markTextView)
+        markTextView.anchor(top: themeInfoTextView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 4, paddingRight: 4)
+        
         view.addSubview(homeworkTextView)
-        homeworkTextView.anchor(top: themeInfoTextView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 4, paddingRight: 4)
+        homeworkTextView.anchor(top: markTextView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 4, paddingRight: 4)
         
         view.addSubview(homeworkInfoTextView)
         homeworkInfoTextView.anchor(top: (homeworkTextView).bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 4, paddingRight: 4)
