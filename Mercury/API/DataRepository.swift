@@ -108,9 +108,9 @@ class DataRepository {
 
     }
     
-    func fetchMessages(completion: @escaping([Message]) -> Void) {
+    func fetchMessages(forRoom: String, completion: @escaping([Message]) -> Void) {
         var messages = [Message]()
-        let url = "http://194.67.92.182:3000/getMessages"
+        let url = "http://194.67.92.182:3000/getMessages?room=\(forRoom)"
         let urlRequest = URLRequest(url: URL(string: url)!)
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
