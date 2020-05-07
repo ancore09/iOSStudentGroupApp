@@ -40,7 +40,7 @@ class LoginController: UIViewController {
         button.setTitle("Log in", for: .normal)
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.4854539633, green: 0.628457427, blue: 0.8009936213, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
         button.isEnabled = false
@@ -151,10 +151,10 @@ extension LoginController: AuthenticationControllerProtocol {
     func checkFormStatus() {
         if viewModel.formIsValid {
             loginButton.isEnabled = true
-            loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            loginButton.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
         } else {
             loginButton.isEnabled = false
-            loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+            loginButton.backgroundColor = #colorLiteral(red: 0.4854539633, green: 0.628457427, blue: 0.8009936213, alpha: 1)
         }
     }
 }

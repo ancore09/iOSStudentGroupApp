@@ -133,6 +133,9 @@
                         <viewLayoutGuide key="safeArea" id="IUo-Kx-zQ8"/>
                     </view>
                     <navigationItem key="navigationItem" id="iku-L1-JVA"/>
+                    <connections>
+                        <segue destination="4pP-1F-nI9" kind="show" identifier="logout" id="oyr-aZ-MUp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfV-jD-Ljb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,8 +182,9 @@
         <!--Navigation Controller-->
         <scene sceneID="hsJ-ly-9HB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4pP-1F-nI9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="4pP-1F-nI9" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jUg-GT-p98"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3KV-1a-lI3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

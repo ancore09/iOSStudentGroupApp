@@ -40,7 +40,7 @@ class ChatController: UICollectionViewController {
         super.viewDidLoad()
         configureUI()
         fetchMessages()
-        DataRepository.shared.initSocket { (message) in
+        DataRepository.shared.initSocket(forGroup: group) { (message) in
             self.messages.append(message)
             self.collectionView.reloadData()
             self.collectionView.scrollToItem(at: [0, self.messages.count - 1], at: .bottom, animated: true)
@@ -117,7 +117,7 @@ extension ChatController: CustomInputAccessoryViewDelegate {
     func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String) {
         let message = Message(id: 0, body: message, memberData: DataRepository.shared.user!.memberData!, filehash: "")
         
-        DataRepository.shared.sendMessage(message: message)
+        DataRepository.shared.sendMessage(forGroup: group, message: message)
         inputView.clearMessageText()
     }
 }

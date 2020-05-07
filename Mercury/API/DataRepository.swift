@@ -21,8 +21,8 @@ class DataRepository {
     var manager: SocketManager?
     var socket: SocketIOClient?
     
-    func initSocket(completion: @escaping(Message) -> Void) {
-        let result = groups![0].NameInfo.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+    func initSocket(forGroup: Group, completion: @escaping(Message) -> Void) {
+        let result = forGroup.NameInfo.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
         print(result)
         manager = SocketManager(socketURL: URL(string: "http://194.67.92.182:3000")!, config: [.log(false), .compress])
         socket = manager?.defaultSocket
@@ -136,12 +136,13 @@ class DataRepository {
         dataTask.resume()
     }
     
-    func sendMessage(message: Message) {
+    func sendMessage(forGroup: Group, message: Message) {
         do {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(message)
             let json = String(data: jsonData, encoding: .utf8)
-            socket?.emit("message", ["room": "SamsungITSchool", "mes": json])
+            let result = forGroup.NameInfo.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+            socket?.emit("message", ["room": result, "mes": json])
         } catch let error {
             print(error.localizedDescription)
         }
