@@ -19,10 +19,20 @@ class MessageCell: UICollectionViewCell {
     var bubbleLeftAnchor: NSLayoutConstraint!
     var bubbleLRightAnchor: NSLayoutConstraint!
     
+    var textBottomAnchor: NSLayoutConstraint!
+    
     private lazy var profileImgeView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .gray
         iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    private lazy var attachedImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.backgroundColor = .gray
+        iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         return iv
     }()
@@ -107,6 +117,15 @@ class MessageCell: UICollectionViewCell {
         usernameTextView.text = message.memberData.nick
         if viewModel.shouldHideProfileImage {
             usernameTextView.removeFromSuperview()
+        }
+        
+        if viewModel.hasImage {
+            addSubview(attachedImageView)
+            attachedImageView.anchor(top: bubbleContainer.bottomAnchor, left: bubbleContainer.leftAnchor, right: bubbleContainer.rightAnchor)
+            attachedImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
+            
+            let url = "http://194.67.92.182:3000/\(message.fileHash!)"
+            attachedImageView.sd_setImage(with: URL(string: url), completed: nil)
         }
     }
 }

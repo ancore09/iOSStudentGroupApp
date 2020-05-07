@@ -114,7 +114,7 @@ extension ChatController: UICollectionViewDelegateFlowLayout {
 
 extension ChatController: CustomInputAccessoryViewDelegate {
     func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String) {
-        let message = Message(id: 0, body: message, memberData: DataRepository.shared.user!.memberData!)
+        let message = Message(id: 0, body: message, memberData: DataRepository.shared.user!.memberData!, filehash: "")
         
         DataRepository.shared.sendMessage(message: message)
         inputView.clearMessageText()

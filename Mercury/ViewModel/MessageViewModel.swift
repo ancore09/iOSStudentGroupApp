@@ -21,8 +21,8 @@ struct MessageViewModel {
     }
     
     var rightAnchorActive: Bool {
-        print(message.memberData.nick)
-        print(DataRepository.shared.user?.memberData?.nick)
+        //print(message.memberData.nick)
+        //print(DataRepository.shared.user?.memberData?.nick)
         return (message.memberData.nick == DataRepository.shared.user?.memberData?.nick)
     }
     
@@ -37,6 +37,10 @@ struct MessageViewModel {
     var profileImageUrl: URL? {
         //guard let user = DataRepository.user else { return nil }
         return URL(string: "")
+    }
+    
+    var hasImage: Bool {
+        return !message.fileHash!.isEmpty
     }
     
     init(message: Message) {

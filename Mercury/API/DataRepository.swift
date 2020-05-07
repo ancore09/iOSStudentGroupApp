@@ -40,7 +40,7 @@ class DataRepository {
                 let json = try JSONSerialization.jsonObject(with: dataNewNow, options: []) as! [String:AnyObject]
                 let mm = json["memberData"]
                 let memberData = MemberData(nick: mm!["nick"]!! as! String, color: mm!["color"]!! as! String)
-                let message = Message(id: json["ID"] as! NSInteger, body: json["body"] as! String, memberData: memberData)
+                let message = Message(id: json["ID"] as! NSInteger, body: json["body"] as! String, memberData: memberData, filehash: json["fileHash"] as? String)
                 self.messages?.append(message)
                 completion(message)
                 print(message.body)
@@ -116,13 +116,13 @@ class DataRepository {
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
             do {
                 let json = try JSON(data: data!)
-                print(json[0]["body"])
+                //print(json[0]["body"])
                 
-                for (key, subJson):(String, JSON) in json {
-                   print(subJson)
+                for (_, subJson):(String, JSON) in json {
+                    print(subJson)
                     let mm = subJson["memberData"]
                     let memberData = MemberData(nick: mm["nick"].stringValue, color: mm["color"].stringValue)
-                    let message = Message(id: subJson["ID"].int!, body: subJson["body"].stringValue, memberData: memberData)
+                    let message = Message(id: subJson["ID"].int!, body: subJson["body"].stringValue, memberData: memberData, filehash: subJson["fileHash"].stringValue)
                     messages.append(message)
                 }
             } catch let error {

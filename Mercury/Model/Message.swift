@@ -13,11 +13,12 @@ class Message: Decodable, Encodable {
     var body: String
     var memberData: MemberData
     var belongsToCurrentUser: Bool = false
-    var filehash: String = ""
+    var fileHash: String?
     
-    init(id: Int, body: String, memberData: MemberData) {
+    init(id: Int, body: String, memberData: MemberData, filehash: String?) {
         self.ID = id
         self.body = body
         self.memberData = memberData
+        self.fileHash = filehash
     }
 }
