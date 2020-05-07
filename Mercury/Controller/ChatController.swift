@@ -65,6 +65,7 @@ class ChatController: UICollectionViewController {
         DataRepository.shared.fetchMessages { (messages) in
             self.messages = messages
             self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: [0, self.messages.count - 1], at: .bottom, animated: true)
         }
     }
     
