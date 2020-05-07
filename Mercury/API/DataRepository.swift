@@ -41,6 +41,7 @@ class DataRepository {
                 let mm = json["memberData"]
                 let memberData = MemberData(nick: mm!["nick"]!! as! String, color: mm!["color"]!! as! String)
                 let message = Message(id: json["ID"] as! NSInteger, body: json["body"] as! String, memberData: memberData)
+                self.messages?.append(message)
                 completion(message)
                 print(message.body)
 
@@ -132,6 +133,17 @@ class DataRepository {
             }
         }
         dataTask.resume()
+    }
+    
+    func sendMessage(message: Message) {
+        do {
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try jsonEncoder.encode(message)
+            let json = String(data: jsonData, encoding: .utf8)
+            socket?.emit("message", ["room": "SamsungITSchool", "mes": json])
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     

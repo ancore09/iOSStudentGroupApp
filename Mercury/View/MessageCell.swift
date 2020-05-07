@@ -19,9 +19,9 @@ class MessageCell: UICollectionViewCell {
     var bubbleLeftAnchor: NSLayoutConstraint!
     var bubbleLRightAnchor: NSLayoutConstraint!
     
-    private let profileImgeView: UIImageView = {
+    private lazy var profileImgeView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .systemGray
+        iv.backgroundColor = .gray
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
@@ -34,6 +34,16 @@ class MessageCell: UICollectionViewCell {
         tv.isScrollEnabled = false
         tv.isEditable = false
         tv.textColor = .white
+        return tv
+    }()
+    
+    private let usernameTextView: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = .clear
+        tv.font = UIFont.systemFont(ofSize: 9)
+        tv.isScrollEnabled = false
+        tv.isEditable = false
+        tv.textColor = .systemPurple
         return tv
     }()
     
@@ -64,6 +74,9 @@ class MessageCell: UICollectionViewCell {
         bubbleLRightAnchor = bubbleContainer.rightAnchor.constraint(equalTo: rightAnchor, constant: -12)
         bubbleLRightAnchor.isActive = false
         
+        bubbleContainer.addSubview(usernameTextView)
+        usernameTextView.anchor(top: bubbleContainer.topAnchor, left: bubbleContainer.leftAnchor, right: bubbleContainer.rightAnchor, paddingTop: -19, paddingLeft: 4, paddingRight: 12)
+        
         bubbleContainer.addSubview(textView)
         textView.anchor(top: bubbleContainer.topAnchor, left: bubbleContainer.leftAnchor, bottom: bubbleContainer.bottomAnchor, right: bubbleContainer.rightAnchor, paddingTop: 4, paddingLeft: 12, paddingBottom: 4, paddingRight: 12)
     }
@@ -86,6 +99,14 @@ class MessageCell: UICollectionViewCell {
         bubbleLRightAnchor.isActive = viewModel.rightAnchorActive
         
         profileImgeView.isHidden = viewModel.shouldHideProfileImage
-        profileImgeView.sd_setImage(with: viewModel.profileImageUrl, completed: nil)
+        var color = self.message?.memberData.color
+        color! += "ff"
+        profileImgeView.backgroundColor = UIColor(hex: color!)
+        //profileImgeView.sd_setImage(with: viewModel.profileImageUrl, completed: nil)
+        
+        usernameTextView.text = message.memberData.nick
+        if viewModel.shouldHideProfileImage {
+            usernameTextView.removeFromSuperview()
+        }
     }
 }

@@ -89,7 +89,6 @@ extension ChatController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! MessageCell
         cell.message = messages[indexPath.row]
-        //cell.message?.user = user
         return cell
     }
 }
@@ -114,7 +113,10 @@ extension ChatController: UICollectionViewDelegateFlowLayout {
 
 extension ChatController: CustomInputAccessoryViewDelegate {
     func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String) {
+        let message = Message(id: 0, body: message, memberData: DataRepository.shared.user!.memberData!)
         
+        DataRepository.shared.sendMessage(message: message)
+        inputView.clearMessageText()
     }
 }
 

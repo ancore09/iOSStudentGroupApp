@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MemberData: Decodable {
+class MemberData: Decodable, Encodable {
     var nick: String
     var color: String
     

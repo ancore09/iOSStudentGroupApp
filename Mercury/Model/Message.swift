@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Message: Decodable {
+class Message: Decodable, Encodable {
     var ID: Int
     var body: String
     var memberData: MemberData

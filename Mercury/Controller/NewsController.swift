@@ -27,14 +27,11 @@ class NewsController: UIViewController {
         configureBaseUI(withNavBarTitle: "News", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
         configureCollectionView()
         
-        DataRepository.shared.authUser(login: "rollingworld", hash: "356a192b7913b04c54574d18c28d46e6395428ab") { (user) in
-            print(user.memberData?.nick)
-            var ids = [Int]()
-            DataRepository.shared.groups?.forEach({ (group) in
-                ids.append(group.ID)
-            })
-            self.fetchNews(forGroupIds: ids)
-        }
+        var ids = [Int]()
+        DataRepository.shared.groups?.forEach({ (group) in
+            ids.append(group.ID)
+        })
+        self.fetchNews(forGroupIds: ids)
     }
 
     //MARK: Helpers
