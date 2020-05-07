@@ -1,5 +1,6 @@
 PODS:
   - JGProgressHUD (2.0.4)
+  - Nuke (8.4.1)
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - JGProgressHUD (~> 2.0.3)
+  - Nuke (~> 8.0)
   - SDWebImage (~> 4.4.2)
   - Socket.IO-Client-Swift (~> 15.2.0)
   - SwiftyJSON (~> 4.0)
@@ -17,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - JGProgressHUD
+    - Nuke
     - SDWebImage
     - Socket.IO-Client-Swift
     - Starscream
@@ -24,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
+  Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 9dc3b14b6c02e2d7908888366294d035ccbca8c5
+PODFILE CHECKSUM: 8a449da0d0874b953206c7069fe729ddbfa82355
 
 COCOAPODS: 1.9.1

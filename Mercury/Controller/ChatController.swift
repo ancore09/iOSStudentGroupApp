@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 private let reuseId = "MessageCell"
 
@@ -92,7 +93,18 @@ extension ChatController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! MessageCell
         cell.message = messages[indexPath.row]
-        return cell
+        
+        if messages[indexPath.row].fileHash == nil {
+            return cell
+        } else if messages[indexPath.row].fileHash == "" {
+            return cell
+        } else {
+            let url = "http://194.67.92.182:3000/\(messages[indexPath.row].fileHash!)"
+            var options = ImageLoadingOptions.shared
+            options.contentModes?.success = .scaleToFill
+            Nuke.loadImage(with: URL(string: url)!, options: options, into: cell.attachedImageView)
+            return cell
+        }
     }
 }
 

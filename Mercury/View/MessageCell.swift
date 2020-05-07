@@ -24,12 +24,12 @@ class MessageCell: UICollectionViewCell {
     private lazy var profileImgeView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .gray
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
+        //iv.contentMode = .scaleAspectFill
+        //iv.clipsToBounds = true
         return iv
     }()
     
-    private lazy var attachedImageView: UIImageView = {
+    public lazy var attachedImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .gray
         iv.contentMode = .scaleAspectFit
@@ -128,8 +128,8 @@ class MessageCell: UICollectionViewCell {
             attachedImageView.anchor(top: textView.bottomAnchor, left: bubbleContainer.leftAnchor, bottom: bubbleContainer.bottomAnchor, right: bubbleContainer.rightAnchor)
             attachedImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 250).isActive = true
             
-            let url = "http://194.67.92.182:3000/\(message.fileHash!)"
-            self.attachedImageView.sd_setImage(with: URL(string: url), completed: nil)
+            //let url = "http://194.67.92.182:3000/\(message.fileHash!)"
+            //self.attachedImageView.sd_setImage(with: URL(string: url), completed: nil)
         }
     }
 }

@@ -10,4 +10,5 @@ target 'Mercury' do
 	pod 'JGProgressHUD','~>2.0.3'
 	pod 'Socket.IO-Client-Swift','~> 15.2.0'
 	pod 'SwiftyJSON', '~> 4.0'
+	pod 'Nuke', '~> 8.0'
 end
