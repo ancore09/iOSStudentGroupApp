@@ -12,7 +12,7 @@ struct NewsService {
     static let shared = NewsService()
     
     func fetchNews(forGroupIds: [Int], completion: @escaping([New]) -> Void) {
-        var url = "http://194.67.92.182:3000/getNews?"
+        var url = "\(SERVER_URL)/getNews?"
         forGroupIds.forEach { (id) in
             url += "groupid=\(id)&"
         }
@@ -29,7 +29,7 @@ struct NewsService {
     }
     
     func postNew(forGroupId: Int, new: New, completion: @escaping(New) -> Void) {
-        var url = "http://194.67.92.182:3000/postNew?groupid=\(forGroupId)"
+        var url = "\(SERVER_URL)/postNew?groupid=\(forGroupId)"
         var components = URLComponents(url: URL(string: url)!, resolvingAgainstBaseURL: false)!
 
         components.queryItems = [

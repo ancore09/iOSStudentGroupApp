@@ -12,7 +12,7 @@ struct LessonService {
     static let shared = LessonService()
     
     func fetchLessons(forGroups: [Group], forUserId: Int, completion: @escaping([Lesson]) -> Void) {
-        var url = "http://194.67.92.182:3000/getLessons?loginid=\(forUserId)"
+        var url = "\(SERVER_URL)/getLessons?loginid=\(forUserId)"
         forGroups.forEach { (group) in
             url += "&groupid=\(group.ID)"
         }
@@ -29,13 +29,13 @@ struct LessonService {
                 }
             }
             
-            let url = "http://194.67.92.182:3000/getEvaluation?login=\(DataRepository.shared.user!.Login)"
+            let url = "\(SERVER_URL)/getEvaluation?login=\(DataRepository.shared.user!.Login)"
             let urlRequest = URLRequest(url: URL(string: url)!)
             let session = URLSession(configuration: .default)
             let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
                 let responseE = try! JSONDecoder().decode([Evaluation].self, from: data!)
                 
-                var url = "http://194.67.92.182:3000/getUserMarks?login=\(DataRepository.shared.user!.Login)"
+                var url = "\(SERVER_URL)/getUserMarks?login=\(DataRepository.shared.user!.Login)"
                 responseE.forEach { (evaluation) in
                     url += "&lessonsids=\(evaluation.lesson_id)"
                 }

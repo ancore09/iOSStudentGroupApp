@@ -12,3 +12,5 @@ struct Keys {
     static let LOGINKEY = "LOGIN"
     static let PASSHASHKEY = "PASS"
 }
+
+let SERVER_URL = "http://194.67.92.182:3000"

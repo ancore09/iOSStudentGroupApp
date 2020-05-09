@@ -24,7 +24,7 @@ class DataRepository {
     func initSocket(forGroup: Group, completion: @escaping(Message) -> Void) {
         let result = forGroup.NameInfo.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
         print(result)
-        manager = SocketManager(socketURL: URL(string: "http://194.67.92.182:3000")!, config: [.log(false), .compress])
+        manager = SocketManager(socketURL: URL(string: SERVER_URL)!, config: [.log(false), .compress])
         socket = manager?.defaultSocket
         
         socket!.on(clientEvent: .connect) {data, ack in
@@ -62,7 +62,7 @@ class DataRepository {
     
     func authUser(login: String, hash: String, completion: @escaping(User) -> Void) {
         // fetching user
-        let url = "http://194.67.92.182:3000/auth?login=\(login)&passwordhash=\(hash)"
+        let url = "\(SERVER_URL)/auth?login=\(login)&passwordhash=\(hash)"
         let urlRequest = URLRequest(url: URL(string: url)!)
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
@@ -70,7 +70,7 @@ class DataRepository {
             
             
             // fetching user's memberdata
-            let url = "http://194.67.92.182:3000/getMemberData?id=\(responseU.memberdata_ID)"
+            let url = "\(SERVER_URL)/getMemberData?id=\(responseU.memberdata_ID)"
             let urlRequest = URLRequest(url: URL(string: url)!)
             let session = URLSession(configuration: .default)
             let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
@@ -79,7 +79,7 @@ class DataRepository {
                 self.user = responseU
                 
                 //fetching gropings
-                let url = "http://194.67.92.182:3000/getGrouping?userid=\(responseU.ID)"
+                let url = "\(SERVER_URL)/getGrouping?userid=\(responseU.ID)"
                 let urlRequest = URLRequest(url: URL(string: url)!)
                 let session = URLSession(configuration: .default)
                 let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
@@ -90,7 +90,7 @@ class DataRepository {
                     }
                     
                     // fetching groups
-                    var url = "http://194.67.92.182:3000/getGroup?"
+                    var url = "\(SERVER_URL)/getGroup?"
                     ids.forEach { (id) in
                         url += "id=\(id)&"
                     }
@@ -116,7 +116,7 @@ class DataRepository {
     
     func fetchMessages(forRoom: String, completion: @escaping([Message]) -> Void) {
         var messages = [Message]()
-        let url = "http://194.67.92.182:3000/getMessages?room=\(forRoom)"
+        let url = "\(SERVER_URL)/getMessages?room=\(forRoom)"
         let urlRequest = URLRequest(url: URL(string: url)!)
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
