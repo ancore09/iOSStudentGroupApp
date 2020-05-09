@@ -18,13 +18,25 @@ class JournalController: UIViewController {
     
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewFlowLayout())
     
+    private let addLessonButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.backgroundColor = .systemBlue
+        button.tintColor = .white
+        button.imageView?.setDimensions(height: 24, width: 24)
+        button.setDimensions(height: 56, width: 56)
+        button.layer.cornerRadius = 56 / 2
+        button.addTarget(self, action: #selector(showLessonForm), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         configureBaseUI(withNavBarTitle: "Journal", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
-        configureCollectionView()
+        configureUI()
         
         fetchLessons()
     }
@@ -36,7 +48,19 @@ class JournalController: UIViewController {
     
     //MARK: Selectors
     
+    @objc func showLessonForm() {
+        let controller = LessonAdditionFromController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     //MARK: Helpers
+    
+    func configureUI() {
+        configureCollectionView()
+        
+        view.addSubview(addLessonButton)
+        addLessonButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 16, paddingRight: 24)
+    }
     
     func configureCollectionView() {
         collectionView.backgroundColor = #colorLiteral(red: 0.8899991512, green: 0.8901486993, blue: 0.8899795413, alpha: 1)

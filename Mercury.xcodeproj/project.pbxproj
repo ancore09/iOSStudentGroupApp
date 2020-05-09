@@ -45,6 +45,10 @@
 		7793A85C245F3D0600A5E33F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85A245F3D0600A5E33F /* Main.storyboard */; };
 		7793A861245F3D0700A5E33F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7793A85F245F3D0700A5E33F /* LaunchScreen.storyboard */; };
 		7793A869245F3DDD00A5E33F /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793A868245F3DDD00A5E33F /* ConversationsController.swift */; };
+		77E15FFD24673C8B00467B2E /* NewAdditionFromController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E15FFC24673C8B00467B2E /* NewAdditionFromController.swift */; };
+		77E160002467527700467B2E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E15FFF2467527700467B2E /* ImagePickerController.swift */; };
+		77E160022467528500467B2E /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E160012467528500467B2E /* ImageRow.swift */; };
+		77E16004246759B400467B2E /* LessonAdditionFromController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E16003246759B400467B2E /* LessonAdditionFromController.swift */; };
 		CB1AE490FFD7E9EB33A1E9FC /* Pods_Mercury.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F3912A617C3DEF1B892508 /* Pods_Mercury.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,10 @@
 		7793A860245F3D0700A5E33F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7793A862245F3D0700A5E33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7793A868245F3DDD00A5E33F /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		77E15FFC24673C8B00467B2E /* NewAdditionFromController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAdditionFromController.swift; sourceTree = "<group>"; };
+		77E15FFF2467527700467B2E /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		77E160012467528500467B2E /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		77E16003246759B400467B2E /* LessonAdditionFromController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonAdditionFromController.swift; sourceTree = "<group>"; };
 		D83DEA1AA3C3ADBC5F3AA306 /* Pods-Mercury.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercury.release.xcconfig"; path = "Target Support Files/Pods-Mercury/Pods-Mercury.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,9 +167,12 @@
 		772A65CD2462BBF60081CD93 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				77E15FFE2467526500467B2E /* ImageRow */,
 				772A65FA246326C10081CD93 /* Auth */,
 				7793A856245F3D0600A5E33F /* NewsController.swift */,
+				77E15FFC24673C8B00467B2E /* NewAdditionFromController.swift */,
 				7793A858245F3D0600A5E33F /* JournalController.swift */,
+				77E16003246759B400467B2E /* LessonAdditionFromController.swift */,
 				772A65E22462FE2C0081CD93 /* LessonDetailsController.swift */,
 				7793A868245F3DDD00A5E33F /* ConversationsController.swift */,
 				772A660D2463490C0081CD93 /* ChatController.swift */,
@@ -233,6 +244,15 @@
 				7793A862245F3D0700A5E33F /* Info.plist */,
 			);
 			path = Mercury;
+			sourceTree = "<group>";
+		};
+		77E15FFE2467526500467B2E /* ImageRow */ = {
+			isa = PBXGroup;
+			children = (
+				77E160012467528500467B2E /* ImageRow.swift */,
+				77E15FFF2467527700467B2E /* ImagePickerController.swift */,
+			);
+			path = ImageRow;
 			sourceTree = "<group>";
 		};
 		C57A085ECA56223763A1455A /* Frameworks */ = {
@@ -358,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E15FFD24673C8B00467B2E /* NewAdditionFromController.swift in Sources */,
 				772A6605246328100081CD93 /* CustomTextField.swift in Sources */,
 				772A65EF24631C170081CD93 /* Grouping.swift in Sources */,
 				772A6614246349EB0081CD93 /* MessageViewModel.swift in Sources */,
@@ -366,11 +387,14 @@
 				772A661C2464456B0081CD93 /* Evaluation.swift in Sources */,
 				772A6606246328100081CD93 /* InputContainerView.swift in Sources */,
 				772A65E32462FE2C0081CD93 /* LessonDetailsController.swift in Sources */,
+				77E160002467527700467B2E /* ImagePickerController.swift in Sources */,
 				772A65D12462BC310081CD93 /* Extensions.swift in Sources */,
 				772A65D32462CCB00081CD93 /* NewCell.swift in Sources */,
+				77E160022467528500467B2E /* ImageRow.swift in Sources */,
 				772A6612246349530081CD93 /* Message.swift in Sources */,
 				772A66092463283F0081CD93 /* LoginViewModel.swift in Sources */,
 				7793A857245F3D0600A5E33F /* NewsController.swift in Sources */,
+				77E16004246759B400467B2E /* LessonAdditionFromController.swift in Sources */,
 				772A65F1246321110081CD93 /* Informing.swift in Sources */,
 				772A66102463493B0081CD93 /* MessageCell.swift in Sources */,
 				772A661624634B4C0081CD93 /* CustomInputAccessoryView.swift in Sources */,

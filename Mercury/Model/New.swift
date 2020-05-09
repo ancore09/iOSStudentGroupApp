@@ -14,10 +14,10 @@ class New: Decodable {
     var body: String
     var epilogue: String
     var datedmy: String
-    var filehash: String
+    var filehash: String?
     var groupName: String?
     
-    init(id: Int, title: String, body: String, epil: String, date: String, filehash: String) {
+    init(id: Int, title: String, body: String, epil: String, date: String, filehash: String?) {
         self.ID = id
         self.title = title
         self.body = body

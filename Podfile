@@ -11,4 +11,5 @@ target 'Mercury' do
 	pod 'Socket.IO-Client-Swift','~> 15.2.0'
 	pod 'SwiftyJSON', '~> 4.0'
 	pod 'Nuke', '~> 8.0'
+	pod 'Eureka'
 end

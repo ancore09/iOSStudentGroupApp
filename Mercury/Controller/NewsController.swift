@@ -18,6 +18,18 @@ class NewsController: UIViewController {
     
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewFlowLayout())
     
+    private let addNewButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.backgroundColor = .systemBlue
+        button.tintColor = .white
+        button.imageView?.setDimensions(height: 24, width: 24)
+        button.setDimensions(height: 56, width: 56)
+        button.layer.cornerRadius = 56 / 2
+        button.addTarget(self, action: #selector(showNewForm), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -25,16 +37,30 @@ class NewsController: UIViewController {
         overrideUserInterfaceStyle = .light
         tabBarController?.tabBar.overrideUserInterfaceStyle = .light
         configureBaseUI(withNavBarTitle: "News", withNavBarColor: .systemPurple, navBarPrefersLargeTitles: false)
-        configureCollectionView()
+        configureUI()
         
         var ids = [Int]()
         DataRepository.shared.groups?.forEach({ (group) in
             ids.append(group.ID)
         })
-        self.fetchNews(forGroupIds: ids)
+        fetchNews(forGroupIds: ids)
+    }
+    
+    //MARK: Selectors
+    
+    @objc func showNewForm() {
+        let controller = NewAdditionFromController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     //MARK: Helpers
+    
+    func configureUI() {
+        configureCollectionView()
+        
+        view.addSubview(addNewButton)
+        addNewButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 16, paddingRight: 24)
+    }
     
     func configureCollectionView() {
         collectionView.backgroundColor = #colorLiteral(red: 0.8899991512, green: 0.8901486993, blue: 0.8899795413, alpha: 1)
@@ -46,7 +72,7 @@ class NewsController: UIViewController {
         collectionView.alwaysBounceVertical = true
     }
     
-    //MERK: API
+    //MARK: API
     
     func fetchNews(forGroupIds: [Int]) {
         showLoader(true)

@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Nuke
 
 class NewCell: UICollectionViewCell {
     //MARK: Properties
@@ -88,8 +89,14 @@ class NewCell: UICollectionViewCell {
         bodyTextView.text = new?.body
         epilTextView.text = new?.epilogue
         
-        let url = "http://194.67.92.182:3000/\(new!.filehash)"
-        imageView.sd_setImage(with: URL(string: url), completed: nil)
+        if (!(new?.filehash!.isEmpty)!) {
+            let url = "http://194.67.92.182:3000/\(new!.filehash!)"
+            //imageView.sd_setImage(with: URL(string: url), completed: nil)
+            Nuke.loadImage(with: URL(string: url)!, into: imageView)
+        } else {
+            imageView.image = nil
+            imageView.backgroundColor = .gray
+        }
     }
     
     //MARK: API
