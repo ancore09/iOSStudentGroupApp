@@ -69,11 +69,15 @@ class LessonAdditionFromController: FormViewController {
     
     func postLesson() {
         let dict = self.form.values()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-        var dateString = dateFormatter.string(from: dict["date"] as! Date)
-        dateString = dateString.replacingOccurrences(of: "-", with: ".")
         print(dict)
+        if dict["groupName"]! == nil || dict["date"]! == nil || dict["from"]! == nil || dict["to"]! == nil || dict["theme"]! == nil{
+            return
+        }
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let dateString = dateFormatter.string(from: dict["from"] as! Date)
+        print(dateString)
+        navigationController?.popViewController(animated: true)
     }
 }
