@@ -29,13 +29,13 @@ struct LessonService {
                 }
             }
             
-            let url = "\(SERVER_URL)/getEvaluation?login=\(DataRepository.shared.user!.Login)"
+            let url = "\(SERVER_URL)/getEvaluation?loginid=\(DataRepository.shared.user!.ID)"
             let urlRequest = URLRequest(url: URL(string: url)!)
             let session = URLSession(configuration: .default)
             let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
                 let responseE = try! JSONDecoder().decode([Evaluation].self, from: data!)
                 
-                var url = "\(SERVER_URL)/getUserMarks?login=\(DataRepository.shared.user!.Login)"
+                var url = "\(SERVER_URL)/getUserMarks?loginid=\(DataRepository.shared.user!.ID)"
                 responseE.forEach { (evaluation) in
                     url += "&lessonsids=\(evaluation.lesson_id)"
                 }
