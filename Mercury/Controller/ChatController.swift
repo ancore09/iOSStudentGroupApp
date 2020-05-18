@@ -99,7 +99,7 @@ extension ChatController {
         } else if messages[indexPath.row].fileHash == "" {
             return cell
         } else {
-            let url = "http://194.67.92.182:3000/\(messages[indexPath.row].fileHash!)"
+            let url = "http://194.67.92.182:3001/\(messages[indexPath.row].fileHash!)"
             var options = ImageLoadingOptions.shared
             options.contentModes?.success = .scaleToFill
             Nuke.loadImage(with: URL(string: url)!, options: options, into: cell.attachedImageView)

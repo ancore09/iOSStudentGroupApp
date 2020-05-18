@@ -14,3 +14,4 @@ struct Keys {
 }
 
 let SERVER_URL = "http://194.67.92.182:3000"
+let CHAT_SERVER_URL = "http://194.67.92.182:3001"

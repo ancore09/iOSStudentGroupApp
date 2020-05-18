@@ -24,7 +24,7 @@ class DataRepository {
     func initSocket(forGroup: Group, completion: @escaping(Message) -> Void) {
         let result = forGroup.NameInfo.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
         print(result)
-        manager = SocketManager(socketURL: URL(string: SERVER_URL)!, config: [.log(false), .compress])
+        manager = SocketManager(socketURL: URL(string: CHAT_SERVER_URL)!, config: [.log(false), .compress])
         socket = manager?.defaultSocket
         
         socket!.on(clientEvent: .connect) {data, ack in
@@ -116,7 +116,7 @@ class DataRepository {
     
     func fetchMessages(forRoom: String, completion: @escaping([Message]) -> Void) {
         var messages = [Message]()
-        let url = "\(SERVER_URL)/getMessages?room=\(forRoom)"
+        let url = "\(CHAT_SERVER_URL)/getMessages?room=\(forRoom)"
         let urlRequest = URLRequest(url: URL(string: url)!)
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in

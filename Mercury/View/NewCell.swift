@@ -90,7 +90,7 @@ class NewCell: UICollectionViewCell {
         epilTextView.text = new?.epilogue
         
         if (!(new?.filehash!.isEmpty)!) {
-            let url = "http://194.67.92.182:3000/\(new!.filehash!)"
+            let url = "http://194.67.92.182:3001/\(new!.filehash!)"
             //imageView.sd_setImage(with: URL(string: url), completed: nil)
             Nuke.loadImage(with: URL(string: url)!, into: imageView)
         } else {
